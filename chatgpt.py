@@ -8,7 +8,10 @@ This project was copied from CS Coach's video
 https://youtu.be/BEw5EFqCCEI?si=CRkYGo2kCsfJyo6p
 
 This project intended to learn how to access/use API's
-and how to use sound (in/out) in Python.
+and how to use sound (in/out) in Python. As well,  my intentions 
+where not to code something by myself but to do something
+that interests me and come up with my ideas to add, as this
+project developes.
 
 I have learned a lot from this project, coping it from CS coach. I hope 
 to add facial recognition, and face ID systems to use this bot. I also would like to add automation ie, to send text/ email. This is just the beginning and hope to add/learn more to this
