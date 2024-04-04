@@ -22,14 +22,13 @@ in the years to come
 from openai import OpenAI
 import pyttsx3 
 import speech_recognition as sr
+from keys import key
 
 
 
 client = OpenAI(
-
-    api_key= "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"
+    api_key= key
 )
-
 
 
 
@@ -50,12 +49,11 @@ def Record_text():
                 r.adjust_for_ambient_noise(source2, duration = 0.2)
                 
 
-
                 audio2 = r.listen(source2)
 
                 MyText = r.recognize_google(audio2)
 
-                print(MyText)
+                print(f'{MyText}?\n')
                 return MyText
 
         
@@ -80,13 +78,22 @@ def send_to_chatGPT(messages, model ="gpt-3.5-turbo"):
 
 messages = [ ]
 
-while (1):
-    text = Record_text()
-    messages.append({"role": "user", "content": text}) 
-    response = send_to_chatGPT(messages)
+
+def main():
+    
+    while (1):
+        SpeakText("Listening")
+        print('Listening...\n')
 
 
-    SpeakText(response)
-    print(response)
-    break
+        text = Record_text()
+        messages.append({"role": "user", "content": text}) 
+        response = send_to_chatGPT(messages)
+
+        SpeakText(response)
+        print(f"{response}\n")
+        break
+
  
+if __name__ == "__main__":    
+    main()
